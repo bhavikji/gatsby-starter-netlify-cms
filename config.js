@@ -41,7 +41,9 @@ module.exports = {
     bio: "Designer . Developer . Poet . Writer",
     contacts: {
       email: "bhavikbamania@gmail.com",
+      facebook_link: "https://facebook.com/lordbhavik",
       twitter: "https://twitter.com/bhavikbamania",
+      instagram_link: "https://instagram.com/bhavikbamania",
       github: "https://github.com/bhavikji",
     }
   }

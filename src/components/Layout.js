@@ -7,9 +7,7 @@ import useSiteMetadata from "./SiteMetadata";
 
 const TemplateWrapper = ({ children }) => {
   const { url, title, description, author, menu } = useSiteMetadata();
-  const { name, photo, bio, contacts } = author;
-  const { email, twitter, github } = contacts;
-  const { label, path } = menu;
+  const { contacts } = author;
   return (
     <div>
       <Helmet>
@@ -50,7 +48,7 @@ const TemplateWrapper = ({ children }) => {
       </Helmet>
       <Navbar menus={menu}/>
       <div>{children}</div>
-      <Footer/>
+      <Footer menus={menu} contacts={contacts}/>
     </div>
   );
 };
