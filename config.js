@@ -30,6 +30,10 @@ module.exports = {
       label:'Form Examples',
       path:'/contact/examples'
     },
+    {
+      label:'Bhavikji',
+      path:'/bhavikji'
+    },
   ],
   author: {
     name: "Bhavik Bamania",
