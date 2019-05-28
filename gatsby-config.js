@@ -1,10 +1,15 @@
-var proxy = require('http-proxy-middleware')
+var proxy = require('http-proxy-middleware');
+
+const siteConfig = require('./config.js');
 
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby + Netlify CMS Starter',
-    description:
-      'This repo contains an example business website that is built with Gatsby, and Netlify CMS.It follows the JAMstack architecture by using Git as a single source of truth, and Netlify for continuous deployment, and CDN distribution.',
+    url: siteConfig.url,
+    title: siteConfig.title,
+    description:siteConfig.description,
+    copyright:siteConfig.copyright,
+    author: siteConfig.author,
+    menu:siteConfig.menu,
   },
   plugins: [
     'gatsby-plugin-react-helmet',

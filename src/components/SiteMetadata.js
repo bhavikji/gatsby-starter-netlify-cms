@@ -1,14 +1,30 @@
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from "gatsby";
 
 const useSiteMetadata = () => {
   const { site } = useStaticQuery(
     graphql`
       query SITE_METADATA_QUERY {
         site {
-          siteMetadata {
-            title
-            description
-          }
+            siteMetadata {
+                url
+                title
+                description
+                copyright
+                author {
+                    name
+                    photo
+                    bio
+                    contacts {
+                        email
+                        twitter
+                        github
+                    }
+                }
+                menu {
+                    label,
+                    path
+                }
+            }
         }
       }
     `

@@ -1,18 +1,21 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import Footer from '../components/Footer'
-import Navbar from '../components/Navbar'
-import './all.sass'
-import useSiteMetadata from './SiteMetadata'
+import React from "react";
+import Helmet from "react-helmet";
+import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
+import "./all.sass";
+import useSiteMetadata from "./SiteMetadata";
 
 const TemplateWrapper = ({ children }) => {
-  const { title, description } = useSiteMetadata()
+  const { url, title, description, author, menu } = useSiteMetadata();
+  const { name, photo, bio, contacts } = author;
+  const { email, twitter, github } = contacts;
+  const { label, path } = menu;
   return (
     <div>
       <Helmet>
-        <html lang="en" />
+        <html lang="en"/>
         <title>{title}</title>
-        <meta name="description" content={description} />
+        <meta name="description" content={description}/>
 
         <link
           rel="apple-touch-icon"
@@ -37,18 +40,19 @@ const TemplateWrapper = ({ children }) => {
           href="/img/safari-pinned-tab.svg"
           color="#ff4400"
         />
-        <meta name="theme-color" content="#fff" />
+        <meta name="theme-color" content="#fff"/>
 
-        <meta property="og:type" content="business.business" />
-        <meta property="og:title" content={title} />
-        <meta property="og:url" content="/" />
-        <meta property="og:image" content="/img/og-image.jpg" />
+        <meta property="og:type" content="business.business"/>
+        <meta property="og:title" content={title}/>
+        <meta property="og:url" content={url}/>
+        <meta property="og:image" content="/img/og-image.jpg"/>
+        <meta property="og:description" content={description}/>
       </Helmet>
-      <Navbar />
+      <Navbar menus={menu}/>
       <div>{children}</div>
-      <Footer />
+      <Footer/>
     </div>
-  )
-}
+  );
+};
 
-export default TemplateWrapper
+export default TemplateWrapper;
